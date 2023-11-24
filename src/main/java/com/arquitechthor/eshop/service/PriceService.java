@@ -5,6 +5,7 @@ import java.util.Optional;
 import org.springframework.stereotype.Service;
 
 import com.arquitechthor.eshop.entity.Price;
+import com.arquitechthor.eshop.exception.RecordNotFoundException;
 import com.arquitechthor.eshop.repository.PriceRepository;
 import com.arquitechthor.eshop.request.PriceRequest;
 import com.arquitechthor.eshop.response.PriceResponse;
@@ -34,6 +35,9 @@ public class PriceService {
             		.brandId(priceRequest.getBrandId())
             		.productId(priceRequest.getProductId())
             		.build();
+        }
+        else {
+        	throw new RecordNotFoundException("Record not found");
         }
         
         return priceResponse;
