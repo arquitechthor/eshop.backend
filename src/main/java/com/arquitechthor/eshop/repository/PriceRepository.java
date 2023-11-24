@@ -17,7 +17,7 @@ public interface PriceRepository extends JpaRepository<Price, Long> {
             WHERE b.id = ?3 
             	AND pro.id = ?2 
             	AND (?1 BETWEEN p.startDate AND p.endDate)
-            ORDER BY p.priority ASC
+            ORDER BY p.priority DESC
             LIMIT 1
             """)
    Optional<Price> findFirstbyBrandProductAndDate(LocalDateTime applicationDate, Long productId, Long brandId);
