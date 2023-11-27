@@ -19,6 +19,7 @@ import com.arquitechthor.eshop.entity.Product;
 import com.arquitechthor.eshop.repository.PriceRepository;
 import com.arquitechthor.eshop.request.PriceRequest;
 import com.arquitechthor.eshop.response.PriceResponse;
+import com.arquitechthor.eshop.service.impl.PriceServiceImpl;
 
 public class PriceServiceTest {
 	
@@ -30,7 +31,7 @@ public class PriceServiceTest {
 
     @Spy
     @InjectMocks
-    private PriceService priceService;
+    private PriceServiceImpl priceService;
     
     @Mock
     private PriceRepository priceRepository;
